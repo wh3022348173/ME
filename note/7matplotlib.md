@@ -327,3 +327,199 @@ matplotlib.pyplot.pie(x, explode=None, labels=None, colors=None, autopct=None, p
 - `wedges`：一个包含扇形对象的列表。
 - `texts`：一个包含文本标签对象的列表。
 - `autotexts`：一个包含自动生成的文本标签对象的列表。
+
+## Matplotlib 直方图
+
+使用 pyplot 中的 hist() 方法来绘制直方图。
+
+```
+matplotlib.pyplot.hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bottom=None, histtype='bar', align='mid', orientation='vertical', rwidth=None, log=False, color=None, label=None, stacked=False, **kwargs)
+```
+
+- `x`：表示要绘制直方图的数据，可以是一个一维数组或列表。
+- `bins`：可选参数，表示直方图的箱数。默认为10。
+- `range`：可选参数，表示直方图的值域范围，可以是一个二元组或列表。默认为None，即使用数据中的最小值和最大值。
+- `density`：可选参数，表示是否将直方图归一化。默认为False，即直方图的高度为每个箱子内的样本数，而不是频率或概率密度。
+- `weights`：可选参数，表示每个数据点的权重。默认为None。
+- `cumulative`：可选参数，表示是否绘制累积分布图。默认为False。
+- `bottom`：可选参数，表示直方图的起始高度。默认为None。
+- `histtype`：可选参数，表示直方图的类型，可以是'bar'、'barstacked'、'step'、'stepfilled'等。默认为'bar'。
+- `align`：可选参数，表示直方图箱子的对齐方式，可以是'left'、'mid'、'right'。默认为'mid'。
+- `orientation`：可选参数，表示直方图的方向，可以是'vertical'、'horizontal'。默认为'vertical'。
+- `rwidth`：可选参数，表示每个箱子的宽度。默认为None。
+- `log`：可选参数，表示是否在y轴上使用对数刻度。默认为False。
+- `color`：可选参数，表示直方图的颜色。
+- `label`：可选参数，表示直方图的标签。
+- `stacked`：可选参数，表示是否堆叠不同的直方图。默认为False。
+- `**kwargs`：可选参数，表示其他绘图参数。
+
+## Matplotlib imshow() 方法
+
+imshow() 函数是 Matplotlib 库中的一个函数，用于显示图像。
+
+imshow() 函数常用于绘制二维的灰度图像或彩色图像。
+
+imshow() 函数可用于绘制矩阵、热力图、地图等。
+
+```python
+imshow(X, cmap=None, norm=None, aspect=None, interpolation=None, alpha=None, vmin=None, vmax=None, origin=None, extent=None, shape=None, filternorm=1, filterrad=4.0, imlim=None, resample=None, url=None, *, data=None, **kwargs)
+```
+
+- `X`：输入数据。可以是二维数组、三维数组、PIL图像对象、matplotlib路径对象等。
+- `cmap`：颜色映射。用于控制图像中不同数值所对应的颜色。可以选择内置的颜色映射，如`gray`、`hot`、`jet`等，也可以自定义颜色映射。
+- `norm`：用于控制数值的归一化方式。可以选择`Normalize`、`LogNorm`等归一化方法。
+- `aspect`：控制图像纵横比（aspect ratio）。可以设置为`auto`或一个数字。
+- `interpolation`：插值方法。用于控制图像的平滑程度和细节程度。可以选择`nearest`、`bilinear`、`bicubic`等插值方法。
+- `alpha`：图像透明度。取值范围为0~1。
+- `origin`：坐标轴原点的位置。可以设置为`upper`或`lower`。
+- `extent`：控制显示的数据范围。可以设置为`[xmin, xmax, ymin, ymax]`。
+- `vmin`、`vmax`：控制颜色映射的值域范围。
+- `filternorm 和 filterrad`：用于图像滤波的对象。可以设置为`None`、`antigrain`、`freetype`等。
+- `imlim`： 用于指定图像显示范围。
+- `resample`：用于指定图像重采样方式。
+- `url`：用于指定图像链接。
+
+## Matplotlib imsave() 方法
+
+imsave() 方法是 Matplotlib 库中用于将图像数据保存到磁盘上的函数。
+
+通过 imsave() 方法我们可以轻松将生成的图像保存到我们指定的目录中。
+
+imsave() 方法保存图片支持多种图像格式，例如 PNG、JPEG、BMP 等。
+
+```
+matplotlib.pyplot.imsave(fname, arr, **kwargs)
+```
+
+- `fname`：保存图像的文件名，可以是相对路径或绝对路径。
+- `arr`：表示图像的NumPy数组。
+- `kwargs`：可选参数，用于指定保存的图像格式以及图像质量等参数。
+
+## Matplotlib imread() 方法
+
+imread() 方法是 Matplotlib 库中的一个函数，用于从图像文件中读取图像数据。
+
+imread() 方法返回一个 numpy.ndarray 对象，其形状是 **(nrows, ncols, nchannels)**，表示读取的图像的行数、列数和通道数：
+
+- 如果图像是灰度图像，则 nchannels 为 1。
+- 如果是彩色图像，则 nchannels 为 3 或 4，分别表示红、绿、蓝三个颜色通道和一个 alpha 通道。
+
+```
+matplotlib.pyplot.imread(fname, format=None)
+```
+
+- `fname`：指定了要读取的图像文件的文件名或文件路径，可以是相对路径或绝对路径。
+- `format `：参数指定了图像文件的格式，如果不指定，则默认根据文件后缀名来自动识别格式。
+
+## Seaborn 教程
+
+Seaborn 是一个建立在 Matplotlib 基础之上的 Python 数据可视化库，专注于绘制各种统计图形，以便更轻松地呈现和理解数据。
+
+通过设置 sns.set_theme() 函数，可以选择不同的主题和模板
+
+### 主题（Theme）
+
+**darkgrid**（默认）：深色网格主题。
+
+```python
+import seaborn as sns
+
+# 设置为 darkgrid 主题
+sns.set_theme(style="darkgrid")
+```
+
+**whitegrid**：浅色网格主题。
+
+```python
+import seaborn as sns
+
+# 设置为 whitegrid 主题
+sns.set_theme(style="whitegrid")
+```
+
+**dark**：深色主题，没有网格。
+
+```python
+import seaborn as sns
+
+# 设置为 dark 主题
+sns.set_theme(style="dark")
+```
+
+**white**：浅色主题，没有网格。
+
+```python
+import seaborn as sns
+
+# 设置为 white 主题
+sns.set_theme(style="white")
+```
+
+**ticks**：深色主题，带有刻度标记。
+
+```python
+import seaborn as sns
+
+# 设置为 ticks 主题
+sns.set_theme(style="ticks")
+```
+
+### 模板（Context）
+
+**paper**：适用于小图，具有较小的标签和线条。
+
+```python
+import seaborn as sns
+
+# 设置为 paper 模板
+sns.set_theme(context="paper")
+```
+
+**notebook**（默认）：适用于笔记本电脑和类似环境，具有中等大小的标签和线条。
+
+```python
+import seaborn as sns
+
+# 设置为 notebook 模板
+sns.set_theme(context="notebook")
+```
+
+**talk**：适用于演讲幻灯片，具有大尺寸的标签和线条。
+
+```python
+import seaborn as sns
+
+# 设置为 talk 模板
+sns.set_theme(context="talk")
+```
+
+**poster**：适用于海报，具有非常大的标签和线条。
+
+```python
+import seaborn as sns
+
+# 设置为 poster 模板
+sns.set_theme(context="poster")
+```
+
+### 绘图函数
+
+#### 1. 散点图 - sns.scatterplot()
+
+#### 2. 折线图 - sns.lineplot()
+
+#### 3. 柱状图 - sns.barplot()
+
+用于绘制变量的均值或其他聚合函数的柱状图。
+
+#### 4. 箱线图 - sns.boxplot()
+
+用于绘制变量的分布情况，包括中位数、四分位数等
+
+#### 5. 热图 - sns.heatmap()
+
+用于绘制矩阵数据的热图，通常用于展示相关性矩阵。
+
+#### 6. 小提琴图 - sns.violinplot()
+
+用于显示分布的形状和密度估计，结合了箱线图和核密度估计。
