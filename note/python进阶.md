@@ -810,3 +810,70 @@ Python 的 time 模块下有很多函数可以转换常见日期格式。
 | vonmisesvariate(mu, kappa)                                   | 冯·米塞斯分布。 mu 是平均角度，以弧度表示，介于0和 2*pi 之间，kappa 是浓度参数，必须大于或等于零。 如果 kappa 等于零，则该分布在 0 到 2*pi 的范围内减小到均匀的随机角度。 |
 | paretovariate(alpha)                                         | 帕累托分布。 alpha 是形状参数。                              |
 | weibullvariate(alpha, beta)                                  | 威布尔分布。 alpha 是比例参数，beta 是形状参数。             |
+
+## statistics 模块
+
+### math 模块方法
+
+| 方法                                                         | 描述                                                     |
+| :----------------------------------------------------------- | :------------------------------------------------------- |
+| [statistics.harmonic_mean()](https://www.runoob.com/python3/ref-stat-harmonic_mean.html) | 计算给定数据集的调和平均值。                             |
+| [statistics.mean()](https://www.runoob.com/python3/ref-stat-mean.html) | 计算数据集的平均值                                       |
+| [statistics.median()](https://www.runoob.com/python3/ref-stat-median.html) | 计算数据集的中位数                                       |
+| [statistics.median_grouped()](https://www.runoob.com/python3/ref-stat-median_grouped.html) | 计算给定分组数据集的分组中位数                           |
+| [statistics.median_high()](https://www.runoob.com/python3/ref-stat-median_high.html) | 计算给定数据集的高位中位数                               |
+| [statistics.median_low()](https://www.runoob.com/python3/ref-stat-median_low.html) | 计算给定数据集的低位中位数。                             |
+| [statistics.mode()](https://www.runoob.com/python3/ref-stat-mode.html) | 算数据集的众数（出现频率最高的值）                       |
+| [statistics.pstdev()](https://www.runoob.com/python3/ref-stat-pstdev.html) | 计算给定数据集的样本标准偏差                             |
+| [statistics.stdev()](https://www.runoob.com/python3/ref-stat-stdev.html) | 计算数据集的标准差                                       |
+| [statistics.pvariance()](https://www.runoob.com/python3/ref-stat-pvariance.html) | 计算给定数据集的样本方差                                 |
+| [statistics.variance()](https://www.runoob.com/python3/ref-stat-variance.html) | 计算数据集的方差                                         |
+| [statistics.quantiles()](https://www.runoob.com/python3/ref-stat-quantiles.html) | 计算数据集的分位数，可指定分位数的数量（默认为四分位数） |
+
+## hashlib 模块???
+
+## 量化???
+
+## pyecharts 模块
+
+yecharts 是一个基于 ECharts 的 Python 数据可视化库，它允许用户使用 Python 语言生成各种类型的交互式图表和数据可视化。
+
+ECharts 是由百度开发的一款强大的开源数据可视化库，而 Pyecharts 则是 ECharts 的 Python 封装，使得在 Python 中使用 ECharts 变得更加方便。
+
+pyecharts 提供了一组简单而灵活的 API，使用户能够轻松地创建各种图表，包括但不限于折线图、柱状图、散点图、饼图、地图等。
+
+通过 pyecharts，用户可以使用 Python 语言处理和准备数据，然后使用简洁的代码生成交互式的图表，这些图表可以嵌入到 Web 应用程序中或保存为静态文件。
+
+**pyecharts 特点与功能：**
+
+- **简单易用：** Pyecharts 提供了直观而友好的 API，使得用户能够快速上手，轻松生成各种图表。
+- **丰富的图表类型：** 支持多种常见的图表类型，包括线图、柱状图、散点图、饼图、地图等，满足不同场景的需求。
+- **支持主流数据格式：** 能够处理常见的数据格式，如列表、字典、Pandas DataFrame 等。
+- **交互性：** 生成的图表可以具有交互性，用户可以通过鼠标悬停、缩放等方式与图表进行互动。
+- **丰富的配置选项：** 提供了丰富的配置选项，允许用户自定义图表的样式、布局等属性。
+- **支持主题：** 提供多种主题，用户可以根据需要选择合适的主题，使图表更符合应用的整体风格。
+
+### pyecharts 图表类型
+
+| 图表类型     | pyecharts 类 | 包引入                                   |
+| :----------- | :----------- | :--------------------------------------- |
+| 折线图       | `Line`       | `from pyecharts.charts import Line`      |
+| 柱状图       | `Bar`        | `from pyecharts.charts import Bar`       |
+| 散点图       | `Scatter`    | `from pyecharts.charts import Scatter`   |
+| 饼图         | `Pie`        | `from pyecharts.charts import Pie`       |
+| 雷达图       | `Radar`      | `from pyecharts.charts import Radar`     |
+| 热力图       | `HeatMap`    | `from pyecharts.charts import HeatMap`   |
+| K 线图       | `Kline`      | `from pyecharts.charts import Kline`     |
+| 箱线图       | `Boxplot`    | `from pyecharts.charts import Boxplot`   |
+| 地图         | `Map`        | `from pyecharts.charts import Map`       |
+| 词云图       | `WordCloud`  | `from pyecharts.charts import WordCloud` |
+| 仪表盘       | `Gauge`      | `from pyecharts.charts import Gauge`     |
+| 漏斗图       | `Funnel`     | `from pyecharts.charts import Funnel`    |
+| 树图         | `Tree`       | `from pyecharts.charts import Tree`      |
+| 平行坐标系图 | `Parallel`   | `from pyecharts.charts import Parallel`  |
+| 桑基图       | `Sankey`     | `from pyecharts.charts import Sankey`    |
+| 地理坐标系图 | `Geo`        | `from pyecharts.charts import Geo`       |
+| 时间线图     | `Timeline`   | `from pyecharts.charts import Timeline`  |
+| 3D 散点图    | `Scatter3D`  | `from pyecharts.charts import Scatter3D` |
+| 3D 柱状图    | `Bar3D`      | `from pyecharts.charts import Bar3D`     |
+| 3D 曲面图    | `Surface3D`  | `from pyecharts.charts import Surface3D` |
