@@ -286,9 +286,56 @@ HTML 表格生成器：*https://www.jyshare.com/front-end/7688/*。
 
 border="1"
 
+可以靠内容撑开
+
 ## 表头
 
 表格的表头使用 <th> 标签进行定义。
+
+| 标签名 | 含义 | 特殊说明 |
+| :----- | ---- | -------- |
+| thead  | 头部 |          |
+| tbody  | 主体 |          |
+| tfoot  | 底部 | 汇总     |
+
+## 合并单元格
+
+保留最左 colspan最上rowspan
+
+### 跨行合并
+
+### 跨列合并
+
+## 表单
+
+### input
+
+```html
+<input type="">
+```
+
+| type属性值 | 说明                 |
+| ---------- | -------------------- |
+| text       | 文本框，输入单行文本 |
+| password   | 密码框               |
+| radio      | 单选框               |
+| checkbox   | 多选框               |
+| file       | 上传文件多个multiple |
+
+### 占位文本
+
+placeholder
+
+### radio
+
+| 属性名  | 作用     | 特殊说明 |
+| ------- | -------- | -------- |
+| name    | 控件名称 | 单选     |
+| checked | 默认选中 | 可简写   |
+
+### checkbox
+
+
 
 # 列表
 
@@ -298,7 +345,14 @@ HTML 支持有序、无序和定义列表
 
 无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。
 
-无序列表使用 <ul> 标签
+无序列表使用 <ul> 标签<li>
+
+```
+<ul>只能包含<li>
+<li>可以放其他东西
+```
+
+
 
 ## 有序列表
 
@@ -310,7 +364,7 @@ HTML 支持有序、无序和定义列表
 
 自定义列表不仅仅是一列项目，而是项目及其注释的组合。
 
-自定义列表以 <dl> 标签开始。每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始。
+自定义列表以 <dl> 标签开始。每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始-详情。
 
 # 区块
 
@@ -411,7 +465,7 @@ iframe 可以显示一个目标链接的页面
 
 目标链接的属性必须使用 iframe 的属性
 
-# 音频
+### 音频
 
 ```
 <audio controls>
@@ -433,16 +487,117 @@ control 属性供添加播放、暂停和音量控件。
 <audio src="音频的URL"></audio>
 ```
 
-## 属性
+#### 属性
 
-| 属性      | 作用             | 特殊说明       |
-| --------- | ---------------- | -------------- |
-| src(必须) | 音频URL          | 支持M3,Ogg,Wav |
-| controls  | 显示音频控制面板 |                |
-| loop      | 循环播放         |                |
-| authoplay | 自动播放         | 被禁用         |
+| 属性      | 作用             | 特殊说明        |
+| --------- | ---------------- | --------------- |
+| src(必须) | 音频URL          | 支持mp3,Ogg,Wav |
+| controls  | 显示音频控制面板 |                 |
+| loop      | 循环播放         |                 |
+| authoplay | 自动播放         | 被禁用          |
 
 属性名和属性值一致可以简写   
 
-# 视频
+## 视频
 
+```html
+<video src="视频的URL"></video>
+```
+
+| 属性      | 作用             | 特殊说明        |
+| --------- | ---------------- | --------------- |
+| src(必须) | 视频的URL        | 支持mp4,Ogg,Wav |
+| control   | 显示视频控制面板 |                 |
+| loop      | 循环播放         |                 |
+| muted     | 静音播放         |                 |
+| autoplay  | 自动播放         | 支持静音自动    |
+
+## 下拉菜单
+
+select嵌套option
+
+```html
+<select>
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
+</select>
+```
+
+## 文本域
+
+```html
+<textarea> </textarea>
+```
+
+## label
+
+增大功能
+
+1label标签只包裹内容，不包裹表单控件
+
+设置label标签的for属性值和表单控件的id属性值相同
+
+```html
+<input type="radio" id="man">
+<label for="man">男</label>
+```
+
+## 按钮-button
+
+```html
+<button type="">
+    按钮
+</button>
+```
+
+| type属性值 | 说明                       |
+| ---------- | -------------------------- |
+| submit     | 提交提交数据给后台（默认） |
+| reset      | 重置，恢复默认值           |
+| button     | 普通：默认无功能           |
+
+form表达区域标签(action 未来发送数据的地址)form包裹
+
+## 无语意的布局标签
+
+div：大盒子——独占一行
+
+span：小盒子——不换行
+
+## 字符实体
+
+
+
+显示预留字符
+
+| 显示结果 | 描述 | 实体名称 |
+| -------- | ---- | -------- |
+|          | 空格 | `&nbsp;` |
+| <        | 小于 | `&lt;`   |
+| >        | 大于 | `gt;`    |
+
+#  脚本
+
+```HTML
+<!-- <script> 标签 -->
+<script>
+document.write("Hello World!");
+</script>
+<script> 标签用于定义客户端脚本，比如 JavaScript。
+
+<script> 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。
+
+JavaScript 最常用于图片操作、表单验证以及内容动态更新。
+```
+
+```html
+<!-- <noscript> 标签 -->
+<script>
+document.write("Hello World!")
+</script>
+<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+```
+
+*[HTML 字符实体 | 菜鸟教程 (runoob.com)](https://www.runoob.com/html/html-entities.html)*
